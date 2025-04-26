@@ -1,0 +1,39 @@
+<mat-card class="form-container" appearance="outlined">
+    <mat-card-content class="form">
+        <h1>Novo cadastro</h1>
+        <form [formGroup]="formulario" class="formulario">
+
+            <!-- Campo nome -->
+            <mat-form-field appearence="outline" class="form-group">
+                <mat-label>Nome</mat-label>
+                <input matInput type="text" formControlName="nome" placeholder="Seu nome completo" required>
+                @if(formulario.get('nome')?.hasError('required') && formulario.get('nome')?.touched){
+                <mat-error> Campo obrigatório</mat-error>
+                }
+            </mat-form-field>
+
+
+            <!-- Campo email -->
+            <mat-form-field appearence="outline" class="form-group">
+                <mat-label>Idade</mat-label>
+                <input matInput type="number" formControlName="idade" placeholder="Sua idade" required>
+                @if (formulario.get('idade')?.hasError('required') && formulario.get('idade')?.touched){
+                <mat-error>Campo obrigatório</mat-error>
+                }
+            </mat-form-field>
+
+            <!-- Campo cidade -->
+            <mat-form-field appearence="outline" class="form-group">
+                <mat-label>Cidade</mat-label>
+                <input matInput type="text" formControlName="cidade" placeholder="Sua cidade" required>
+                @if (formulario.get('cidade')?.hasError('required') && formulario.get('cidade')?.touched){
+                <mat-error>Campo obrigatório</mat-error>
+                }
+            </mat-form-field>
+
+        </form>
+        <div class="botao-cadastro">
+            <button class="cadastrar">Cadastrar</button>
+        </div>
+    </mat-card-content>
+</mat-card>
