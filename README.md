@@ -8,6 +8,7 @@ Este repositório armazena um projeto de formulário com validações para CPF e
 - Angular Material
 - Reactive Forms
 - TypeScript
+- Visual Studio Code
 
 ## 🛠️ Funcionalidades 
 - Formulário com campos para Nome, Idade, Cidade (em breve outros campos)
