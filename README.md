@@ -11,7 +11,7 @@ Este repositório armazena um projeto de formulário com validações para CPF e
 - Visual Studio Code
 
 ## 🛠️ Funcionalidades 
-- Formulário com campos para Nome, Idade, Cidade (em breve outros campos)
+- Formulário com campos para nome, e-mail, data de nascimento, cpf e cidade. (em breve campo CEP)
 - Validações para garantir que os campos atendam aos requisitos (obrigatórios, quantidade de caracteres, etc.)
 - Máscara de CPF e Integração com API para consulta de CEP. (em breve)
 
