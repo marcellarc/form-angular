@@ -7,12 +7,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
-
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-formulario',
-  imports: [MatInputModule, MatFormFieldModule, MatButtonModule, MatCardModule, MatDividerModule, ReactiveFormsModule],
+  imports: [ MatDatepickerModule, MatInputModule, MatFormFieldModule, MatButtonModule, MatCardModule, MatDividerModule, ReactiveFormsModule],
   templateUrl: './formulario.component.html',
   styleUrl: './formulario.component.scss'
 })
@@ -20,8 +19,29 @@ export class FormularioComponent {
 
   formulario = new FormGroup({
     nome: new FormControl('', [Validators.required, Validators.maxLength(150)]), // qtd de caracteres 
-    idade: new FormControl(null, [Validators.required, Validators.min(0), Validators.max(120)]), // idade entre 0 e 120
-    cidade: new FormControl('', [Validators.required, Validators.minLength(3)])  // minimo 3 caracteres
+    email: new FormControl('', [Validators.required, Validators.email]),
+    dataNascimento: new FormControl('', [Validators.required]),
+    cpf: new FormControl('', [Validators.required, Validators.pattern(/^\d{3}\.\d{3}\.\d{3}-\d{2}$/)]), // formato 000.000.000-00
+    cidade: new FormControl('', [Validators.required, Validators.minLength(3)]), // minimo 3 caracteres
+    cep: new FormControl('', [Validators.required, Validators.pattern(/^\d{5}-\d{3}$/)]), 
   })
 
+  validarEmail(): boolean{
+    const email = this.formulario.get('email')?.value ?? '';
+    const padraoEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return padraoEmail.test(email);
+  }
+
+  /*validarCpf(): boolean{
+    const cpf = this.formulario.get('cpf')?.value
+    if (!cpf) return false;
+
+    const cpfSemMascara = cpf.replace(/\D/g, '');
+
+    if (cpfSemMascara.length !== 11) return false;
+
+    let soma = 0;
+    if 
+
+  }*/
 }

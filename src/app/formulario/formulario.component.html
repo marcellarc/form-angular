@@ -1,10 +1,10 @@
-<mat-card class="form-container" appearance="outlined">
+<mat-card class="form-container">
     <mat-card-content class="form">
         <h1>Novo cadastro</h1>
         <form [formGroup]="formulario" class="formulario">
 
             <!-- Campo nome -->
-            <mat-form-field appearence="outline" class="form-group">
+            <mat-form-field appearance="fill" class="form-group">
                 <mat-label>Nome</mat-label>
                 <input matInput type="text" formControlName="nome" placeholder="Seu nome completo" required>
                 @if(formulario.get('nome')?.hasError('required') && formulario.get('nome')?.touched){
@@ -12,18 +12,31 @@
                 }
             </mat-form-field>
 
-
             <!-- Campo email -->
-            <mat-form-field appearence="outline" class="form-group">
-                <mat-label>Idade</mat-label>
-                <input matInput type="number" formControlName="idade" placeholder="Sua idade" required>
-                @if (formulario.get('idade')?.hasError('required') && formulario.get('idade')?.touched){
+            <mat-form-field appearance="fill" class="form-group">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" formControlName="email" placeholder="email@exemplo.com" required>
+                @if (formulario.get('email')?.hasError('required') && formulario.get('email')?.touched){
+                <mat-error>Campo obrigatório</mat-error> }
+            </mat-form-field>
+
+            <!-- Campo data de nascimento -->
+            <mat-form-field appearance="fill" class="form-group">
+                <mat-label>Data de nascimento</mat-label>
+                <input matInput type="data" formControlName="dataNascimento" mask="dd/mm/yyyy" placeholder="Sua data de nascimento" required>
+            </mat-form-field>
+
+            <!-- Campo cpf -->
+            <mat-form-field appearance="fill" class="form-group">
+                <mat-label>CPF</mat-label>
+                <input matInput type="text" formControlName="cpf" mask="000.000.000-00" placeholder="Seu CPF" required>
+                @if (formulario.get('cpf')?.hasError('required') && formulario.get('cpf')?.touched){
                 <mat-error>Campo obrigatório</mat-error>
                 }
             </mat-form-field>
 
             <!-- Campo cidade -->
-            <mat-form-field appearence="outline" class="form-group">
+            <mat-form-field appearance="fill" class="form-group">
                 <mat-label>Cidade</mat-label>
                 <input matInput type="text" formControlName="cidade" placeholder="Sua cidade" required>
                 @if (formulario.get('cidade')?.hasError('required') && formulario.get('cidade')?.touched){
