@@ -8,11 +8,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 
-
-
 @Component({
   selector: 'app-formulario',
-  imports: [MatInputModule, MatFormFieldModule, MatButtonModule, MatCardModule, MatDividerModule, ReactiveFormsModule],
+  imports: [ MatInputModule, MatFormFieldModule, MatButtonModule, MatCardModule, MatDividerModule, ReactiveFormsModule],
   templateUrl: './formulario.component.html',
   styleUrl: './formulario.component.scss'
 })
