@@ -12,12 +12,27 @@
                 }
             </mat-form-field>
 
-            <!-- Campo idade -->
+            <!-- Campo email -->
             <mat-form-field appearance="fill" class="form-group">
-                <mat-label>Idade</mat-label>
-                <input matInput type="number" formControlName="idade" placeholder="Sua idade" required>
-                @if (formulario.get('idade')?.hasError('required') && formulario.get('idade')?.touched){
+                <mat-label>Email</mat-label>
+                <input matInput type="email" formControlName="email" placeholder="email@exemplo.com" required>
+                @if (formulario.get('email')?.hasError('required') && formulario.get('email')?.touched){
                 <mat-error>Campo obrigatório</mat-error> }
+            </mat-form-field>
+
+            <!-- Campo data de nascimento -->
+            <mat-form-field appearance="fill" class="form-group">
+                <mat-label>Data de nascimento</mat-label>
+                <input matInput type="data" formControlName="dataNascimento" mask="dd/mm/yyyy" placeholder="Sua data de nascimento" required>
+            </mat-form-field>
+
+            <!-- Campo cpf -->
+            <mat-form-field appearance="fill" class="form-group">
+                <mat-label>CPF</mat-label>
+                <input matInput type="text" formControlName="cpf" mask="000.000.000-00" placeholder="Seu CPF" required>
+                @if (formulario.get('cpf')?.hasError('required') && formulario.get('cpf')?.touched){
+                <mat-error>Campo obrigatório</mat-error>
+                }
             </mat-form-field>
 
             <!-- Campo cidade -->
