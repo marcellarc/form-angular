@@ -23,7 +23,12 @@
             <!-- Campo data de nascimento -->
             <mat-form-field appearance="fill" class="form-group">
                 <mat-label>Data de nascimento</mat-label>
-                <input matInput type="data" formControlName="dataNascimento" mask="dd/mm/yyyy" placeholder="Sua data de nascimento" required>
+                <input matInput type="date" min="1900-01-01" max="2025-05-01" formControlName="dataNascimento"
+                    placeholder="Sua data de nascimento" required>
+                @if (formulario.get('dataNascimento')?.hasError('required') &&
+                formulario.get('dataNascimento')?.touched){
+                <mat-error>Campo obrigatório</mat-error>
+                }
             </mat-form-field>
 
             <!-- Campo cpf -->
@@ -35,14 +40,40 @@
                 }
             </mat-form-field>
 
-            <!-- Campo cidade -->
+            <!-- Campo cep -->
             <mat-form-field appearance="fill" class="form-group">
-                <mat-label>Cidade</mat-label>
-                <input matInput type="text" formControlName="cidade" placeholder="Sua cidade" required>
-                @if (formulario.get('cidade')?.hasError('required') && formulario.get('cidade')?.touched){
+                <mat-label>CEP</mat-label>
+                <input matInput type="text" formControlName="cep" mask="00000-000" placeholder="Seu CEP" required>
+                @if (formulario.get('cep')?.hasError('required') && formulario.get('cep')?.touched){
                 <mat-error>Campo obrigatório</mat-error>
                 }
             </mat-form-field>
+
+            <!-- Campo logradouro -->
+            <div class="coluna-endereco">
+                <mat-form-field appearance="fill" class="form-group">
+                    <mat-label>Logradouro</mat-label>
+                    <input matInput type="text" formControlName="logradouro" placeholder="Logradouro" required>
+                </mat-form-field>
+
+                <!-- Campo bairro -->
+                <mat-form-field appearence="fill" class="form-group">
+                    <mat-label>Bairro</mat-label>
+                    <input matInput type="text" formControlName="bairro" placeholder="bairro" required>
+                </mat-form-field>
+
+                <!-- Campo cidade -->
+                <mat-form-field appearance="fill" class="form-group">
+                    <mat-label>Cidade</mat-label>
+                    <input matInput type="text" formControlName="cidade" placeholder="Sua cidade" required>
+                </mat-form-field>
+
+                <!-- Campo estado-->
+                <mat-form-field appearence="fill" class="form-group">
+                    <mat-label>Estado</mat-label>
+                    <input matInput type="text" formControlName="estado" placeholder="Estado" required>
+                </mat-form-field>
+            </div>
 
         </form>
         <div class="botao-cadastro">

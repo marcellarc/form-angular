@@ -1,4 +1,4 @@
-.form-container{
+.form-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,7 +13,7 @@
     border-radius: 10px;
     margin: 50px;
     background-color: rgba(160, 76, 76, 0.2);
-    width: 50%;
+    width: 40%;
 }
 
 .formulario {
@@ -39,4 +39,10 @@
 .form-group {
     margin-bottom: 10px;
     width: 100%;
+}
+
+.coluna-endereco {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
 }
